@@ -158,14 +158,15 @@
             </div>
 
             <!-- Passenger & Details Grid -->
+            <!-- Changed structure to use flex-1 for name and flex-shrink-0 for details -->
             <div class="flex justify-between items-end mt-2">
-                <div>
+                <div class="flex-1 min-w-0 mr-4">
                     <p class="text-[9px] text-gray-400 uppercase tracking-widest mb-0.5">Passenger Name</p>
-                    <!-- Removed w-64 and truncate, added overflow-hidden text-ellipsis whitespace-nowrap -->
-                    <p id="nameDisplayMain" class="text-xl font-bold luxury-font text-[#0b1c3c] overflow-hidden text-ellipsis whitespace-nowrap">Guest</p>
+                    <!-- Allowed text to wrap and removed overflow hidden -->
+                    <p id="nameDisplayMain" class="text-xl font-bold luxury-font text-[#0b1c3c] leading-tight break-words pb-1">Guest</p>
                 </div>
 
-                <div class="flex gap-6">
+                <div class="flex gap-6 flex-shrink-0">
                     <div>
                         <p class="text-[9px] text-gray-400 uppercase tracking-widest mb-0.5">Date</p>
                         <p class="text-sm font-bold text-[#0b1c3c]">07 FEB 26</p>
@@ -186,9 +187,8 @@
             </div>
 
             <!-- Bottom Barcode Strip -->
-            <!-- Changed from absolute to relative flex container -->
-            <div class="flex justify-between items-end opacity-40 mt-4">
-                 <!-- Using barcode font instead of CSS gradient -->
+            <!-- Changed from absolute to relative flex container with mt-auto -->
+            <div class="flex justify-between items-end opacity-40 mt-auto pt-2">
                  <div class="barcode-font">JAYJAYWEDSSARKI2026</div>
                  <div class="text-[8px] font-mono text-gray-500">ELECTRONIC TICKET AUTHORITY</div>
             </div>
@@ -209,7 +209,8 @@
             <div class="space-y-2 mt-1">
                 <div>
                     <p class="text-[8px] text-gray-400 uppercase tracking-wider">Passenger</p>
-                    <p id="nameDisplayStub" class="text-xs font-bold truncate text-[#f3f4f6]">Guest</p>
+                    <!-- Removed truncate, added leading-tight and break-words -->
+                    <p id="nameDisplayStub" class="text-xs font-bold text-[#f3f4f6] leading-tight break-words">Guest</p>
                 </div>
                 
                 <div class="flex justify-between">
